@@ -1,0 +1,64 @@
+@neutral-gray: #d1d1d1;
+
+@black: hsl(0, 0%, 4%);
+@white: hsl(0, 0%, 100%);
+@black: hsl(0, 0%, 4%);
+@light: hsl(0, 0%, 96%);
+@dark: hsl(0, 0%, 21%);
+@primary: hsl(171, 100%, 41%);
+@link: hsl(217, 71%, 53%);
+@info: hsl(204, 86%, 53%);
+@success: hsl(141, 71%, 48%);
+@warning: hsl(48, 100%, 67%);
+@danger: hsl(348, 100%, 61%);
+
+.row-orientation() {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+}
+
+.column-orientation() {
+  display: flex;
+  flex-direction: column;
+}
+
+.container() {
+  padding: 10px;
+  text-overflow: clip;
+  .border(1px, 0px, 1px, 0px, #ffffff);
+}
+
+.border(@left, @top, @right, @bottom, @color) {
+  border-left-width: @left;
+  border-top-width: @top;
+  border-right-width: @right;
+  border-bottom-width: @bottom;
+  border-style: solid;
+  border-color: @color;
+}
+
+.round(@value) {
+  border-radius: @value;
+}
+
+.shadow() {
+  box-shadow: 0 0.1em 0.2em fade(@black, 10%), 0 0 0 0.1em fade(@black, 10%);
+}
+
+date {
+  text-align: center;
+}
+
+.day {
+  .border(0.1em, 0.1em, 0.1em, 0.1em, @neutral-gray);
+  .round(0.6em);
+  padding: 0.4em;
+
+  transition-duration: 0.3s;
+}
+
+.day:hover {
+  .shadow();
+}

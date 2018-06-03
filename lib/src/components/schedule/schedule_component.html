@@ -1,0 +1,41 @@
+<div class="group header" *ngIf="group != null">
+    <div class="title">
+        <h3>{{group.name}}</h3>
+        <h3>{{group.faculty.shortName}}</h3>
+        <h3>{{group.course.name}}</h3>
+    </div>
+</div>
+
+<div class="days">
+    <day [day]="item.data" *ngFor="let item of paginator.selectedData"></day>
+</div>
+
+<div class="waiting-panel" *ngIf="paginator.selectedData.length == 0">
+    <div class="waiting-panel-content">
+        <p>Данные не найдены или не были загружены...</p>
+        <glyph class="waiting-panel-icon" icon="hourglass_empty"></glyph>
+    </div>
+</div>
+
+<div class="paginator footer">
+    <material-button clear-size (click)="paginator.selectFirstPage()">
+        Первая
+    </material-button>
+    <material-button clear-size (click)="paginator.selectPreviousPage()">
+        Предыдущая
+    </material-button>
+    <div *ngFor="let pageIndex of paginator.numerator">
+        <material-button *ngIf="paginator.selectedPage == pageIndex" clear-size class="paginator-selected-page paginator-item" (click)="paginator.updateSelectedPage(pageIndex)">
+            {{pageIndex}}
+        </material-button>
+        <material-button *ngIf="paginator.selectedPage != pageIndex" clear-size class="paginator-item" (click)="paginator.updateSelectedPage(pageIndex)">
+            {{pageIndex}}
+        </material-button>
+    </div>
+    <material-button clear-size (click)="paginator.selectNextPage()">
+        Следующая
+    </material-button>
+    <material-button clear-size (click)="paginator.selectLastPage()">
+        Последняя
+    </material-button>
+</div>

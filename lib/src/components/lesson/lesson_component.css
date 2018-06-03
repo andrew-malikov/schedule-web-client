@@ -1,0 +1,35 @@
+.lesson {
+  display: flex;
+  flex-direction: column;
+  border-left-width: 0em;
+  border-top-width: 0.1em;
+  border-right-width: 0em;
+  border-bottom-width: 0em;
+  border-style: solid;
+  border-color: #bdbdbd;
+  padding: 0.4em;
+}
+.time,
+.discipline,
+.rooms,
+.groups,
+.tutors {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+}
+.time > p,
+.discipline > p,
+.rooms > p,
+.groups > p,
+.tutors > p {
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+}
+p {
+  transition-duration: 0.3s;
+}
+p:hover {
+  color: #209cee;
+}

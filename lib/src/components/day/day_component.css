@@ -1,0 +1,17 @@
+date {
+  text-align: center;
+}
+.day {
+  border-left-width: 0.1em;
+  border-top-width: 0.1em;
+  border-right-width: 0.1em;
+  border-bottom-width: 0.1em;
+  border-style: solid;
+  border-color: #d1d1d1;
+  border-radius: 0.6em;
+  padding: 0.4em;
+  transition-duration: 0.3s;
+}
+.day:hover {
+  box-shadow: 0 0.1em 0.2em rgba(10, 10, 10, 0.1), 0 0 0 0.1em rgba(10, 10, 10, 0.1);
+}

@@ -1,0 +1,292 @@
+.days {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  align-items: flex-start;
+  justify-content: center;
+}
+.days > day {
+  padding: 1.2em;
+}
+.grid {
+  display: flex;
+  flex-direction: column;
+}
+.grid-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  align-items: stretch;
+  background-color: #e8e8e8;
+}
+.grid-contents {
+  overflow-y: auto;
+  max-height: -webkit-min-content;
+  transition-duration: 0.4s;
+}
+.grid-contents > div:not(:first-child):not(:last-child):hover {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.grid-contents > div:first-child:hover {
+  margin-bottom: 20px;
+}
+.grid-contents > div:last-child:hover {
+  margin-top: 20px;
+}
+.grid-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  border-left-width: 0px;
+  border-top-width: 1px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: #e8e8e8;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  align-items: stretch;
+}
+.grid-item-reveal {
+  animation-name: reveal;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+}
+.grid-item:hover {
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25);
+  border-left-width: 0px;
+  border-top-width: 1px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: #689f38;
+}
+.grid-item:hover > div {
+  border-left-width: 1px;
+  border-top-width: 0px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  border-style: solid;
+  border-color: #689f38;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.grid-item:hover > div:first-child {
+  border-left-width: 6px;
+  border-top-width: 0px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  border-style: solid;
+  border-color: #689f38;
+}
+.grid-item > div:hover {
+  background-color: #dcedc8;
+}
+.grid-item-id {
+  padding: 10px;
+  text-overflow: clip;
+  border-left-width: 1px;
+  border-top-width: 0px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  border-style: solid;
+  border-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  flex-basis: 5%;
+}
+.grid-item-name {
+  padding: 10px;
+  text-overflow: clip;
+  border-left-width: 1px;
+  border-top-width: 0px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  border-style: solid;
+  border-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  flex-basis: 15%;
+}
+.grid-item-type {
+  padding: 10px;
+  text-overflow: clip;
+  border-left-width: 1px;
+  border-top-width: 0px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  border-style: solid;
+  border-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  flex-basis: 15%;
+}
+.grid-item-content {
+  padding: 10px;
+  text-overflow: clip;
+  border-left-width: 1px;
+  border-top-width: 0px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  border-style: solid;
+  border-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  flex-basis: 30%;
+}
+.grid-item-count {
+  padding: 10px;
+  text-overflow: clip;
+  border-left-width: 1px;
+  border-top-width: 0px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  border-style: solid;
+  border-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  flex-basis: 15%;
+}
+.grid-item-control {
+  padding: 10px;
+  text-overflow: clip;
+  border-left-width: 1px;
+  border-top-width: 0px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  border-style: solid;
+  border-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  flex-basis: 20%;
+}
+@keyframes reveal {
+  0% {
+    position: relative;
+    transform: translateX(-250px);
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+.waiting-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  animation-name: reveal-waiting-panel;
+  animation-duration: 0.2s;
+}
+.waiting-panel-content {
+  display: flex;
+  flex-direction: row;
+  transition-duration: 0.4s;
+  align-items: center;
+  animation-name: reveal-text;
+  animation-duration: 0.8s;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.waiting-panel-icon {
+  animation-name: waiting-icon;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 0.2s;
+  animation-timing-function: cubic-bezier(0.67, 0, 0.23, 1);
+}
+@keyframes reveal-waiting-panel {
+  0% {
+    height: 0;
+    padding: 0px;
+  }
+  100% {
+    height: 100;
+    padding: 100px;
+  }
+}
+@keyframes reveal-text {
+  0% {
+    max-width: 1px;
+  }
+  100% {
+    max-width: 100%;
+  }
+}
+@keyframes waiting-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.paginator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  background-color: #e8e8e8;
+  align-items: stretch;
+  align-content: flex-end;
+}
+.paginator-item {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.paginator > *:hover {
+  color: #5aa41a;
+}
+.paginator-selected-page {
+  background-color: #689f38;
+  color: #fef0ef;
+}
+.paginator-selected-page:hover {
+  color: #66ba1d;
+  font-weight: bold;
+}
+.header {
+  box-shadow: 0 0.1em 0.2em rgba(10, 10, 10, 0.1), 0 0 0 0.1em rgba(10, 10, 10, 0.1);
+  background-color: #ffffff;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: auto;
+}
+.header > .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-duration: 0.4s;
+  padding: 0.1em;
+  padding-left: 1em;
+}
+.header > .title > h3 {
+  padding-right: 0.3em;
+}
+.footer {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: auto;
+}

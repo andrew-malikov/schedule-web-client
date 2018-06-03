@@ -1,0 +1,19 @@
+<div class="lesson">
+    <div class="time">
+        <p>#{{lesson.time.number}}</p>
+        <p>{{lesson.time.period}}</p>
+    </div>
+    <div class="discipline">
+        <p>{{lesson.discipline.longName}}</p>
+        <p>{{lesson.type.name}}</p>
+    </div>
+    <div class="rooms">
+        <p *ngFor="let room of lesson.rooms">{{room.number}}</p>
+    </div>
+    <div class="groups">
+        <p *ngFor="let group of lesson.groups">{{group.name}}</p>
+    </div>
+    <div class="tutors">
+        <p *ngFor="let tutor of lesson.tutors">{{tutor.shortName}}</p>
+    </div>
+</div>
